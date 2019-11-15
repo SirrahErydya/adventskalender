@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.window-container {
+    padding: 3vh 7vw 3vh 7vw;
+    width: auto;
+    height: 89vh;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 2vh 1vw;
+}
+
+.window {
+    background-color: rgba(255, 255, 255, 0.5);
+}

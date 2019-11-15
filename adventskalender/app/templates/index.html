@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+    <title>Adventskalendar</title>
+</head>
+<body>
+    <div class="window-container">
+        {% for window in windows %}
+            <div class="window" id="{{ window.day }}">
+                {{ window.day }}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
