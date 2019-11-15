@@ -1,6 +1,19 @@
+@font-face {
+    font-family: before-the-rain;
+    src: url("before_the_rain.ttf");
+}
+
+@font-face {
+    font-family: dejavu;
+    src: url("deja_vu.ttf");
+}
+
 body {
     background-color: black;
     overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: dejavu;
 }
 
 .window-container {
@@ -14,5 +27,13 @@ body {
 }
 
 .window {
-    background-color: rgba(255, 255, 255, 0.5);
+    font-family: before-the-rain;
+    text-align: right;
+    padding-right: 50px;
+    padding-top: 50px;
+    font-size: 30pt;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    box-shadow: inset -5px -5px 5px 5px rgba(0,0,0,0.75), -5px -5px 5px 5px rgba(171, 171, 171, 0.5);
+
 }

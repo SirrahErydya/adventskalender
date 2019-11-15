@@ -7,7 +7,7 @@
     <script type="text/javascript" src="{% static 'script.js' %}"></script>
     <title>Adventskalendar</title>
 </head>
-<body>
+<body style=" background-image: url( {{ config.background.url }} );">
     <div class="window-container">
         {% for window in windows %}
             <div class="window" id="{{ window.day }}">
