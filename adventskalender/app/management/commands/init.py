@@ -12,5 +12,5 @@ class Command(BaseCommand):
         conf.save()
         for i in range(1, 25):
             window = Window(day=i, open=False)
-            window.content.name = os.path.join('window_contents', 'placeholder.jpg')
+            window.content.name = os.path.join('window_contents', 'placeholder.png')
             window.save()

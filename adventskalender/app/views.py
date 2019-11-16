@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import redirect
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from . import models
+import json
 
 
 # Create your views here.
@@ -14,3 +15,17 @@ def index(request):
         'config': config
     }
     return HttpResponse(template.render(context, request))
+
+
+def open_window(request):
+    day = json.loads(request.body)['day']
+    window = models.Window.objects.get(day=day)
+    window.open = True
+    window.save()
+    return redirect('index')
+
+
+def load_image(request):
+    day = json.loads(request.body)['day']
+    window = models.Window.objects.get(day=day)
+    return JsonResponse({ 'url': window.content.url, 'descr': window.description})

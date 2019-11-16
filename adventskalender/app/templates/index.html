@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
+    <link rel="icon" href="{% static 'icon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="{% static 'script.js' %}"></script>
     <title>Adventskalendar</title>
 </head>
 <body style=" background-image: url( {{ config.background.url }} );">
     <div class="window-container">
+        {% csrf_token %}
         {% for window in windows %}
-            <div class="window" id="{{ window.day }}">
-                {{ window.day }}
-            </div>
+            {% if window.open %}
+                <div class="window-open" id="{{ window.day }}" style="background-image: url( {{ window.content.url }} )"
+                     onclick="show_img(this.id)">
+            {% else %}
+                <div class="window" id="{{ window.day }}"
+                 onclick="open_window(this.id)">
+            {% endif %}
+                    {{ window.day }}
+                </div>
         {% endfor %}
+        <div class="image-modal" id="modal">
+            <span id="close" onclick="close_modal()">&times</span>
+            <img class="window-content" id="loot"/>
+            <div id="caption"></div>
+        </div>
     </div>
 </body>
 </html>

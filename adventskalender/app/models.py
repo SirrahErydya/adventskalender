@@ -23,3 +23,4 @@ class Window(models.Model):
     day = models.IntegerField()
     content = models.ImageField(upload_to='window_contents')
     open = models.BooleanField(default=False)
+    description = models.CharField(max_length=1000, default="Hast du das Türchen etwa zu früh geöffnet?")
