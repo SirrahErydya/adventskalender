@@ -124,3 +124,18 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.logout {
+    float: right;
+    padding: 10px;
+}
+
+.logout a:link, .logout a:active, .logout a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.logout a:hover{
+    color: white;
+    text-decoration: underline;
+}
