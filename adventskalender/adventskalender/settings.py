@@ -26,7 +26,7 @@ SECRET_KEY = 'yjb#n=d(a$xsbxe0pr4x=1h6-sr#=w!6t9zj_cz9mb97ctao5_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blue.gutcon.eu']
 
 
 # Application definition
