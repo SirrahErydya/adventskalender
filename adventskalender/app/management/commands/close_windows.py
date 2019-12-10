@@ -7,6 +7,6 @@ class Command(BaseCommand):
     help = 'Closes all open windows'
 
     def handle(self, *args, **options):
-        for window in Window.objects:
+        for window in Window.objects.all():
             window.open = False
             window.save()
