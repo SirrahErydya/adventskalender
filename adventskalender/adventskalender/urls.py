@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from app import views
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.conf import settings
+from django.shortcuts import redirect
+from app.views import login_redirect
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('app/open', views.open_window, name='open'),
-    path('app/show', views.load_image, name='show'),
+    path('', login_redirect),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('app/', include('app.urls')),
     path('admin/', admin.site.urls),
 ]
 
